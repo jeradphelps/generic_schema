@@ -8,7 +8,7 @@ class ItemCategoriesController < ApplicationController
   end
 
   def new
-    # This should be dynamic obviously
+    # todo This should be dynamic obviously
     @item_category = ItemCategory.new
     3.times { @item_category.item_fields.build }
   end

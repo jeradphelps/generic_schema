@@ -12,11 +12,6 @@ class ItemsController < ApplicationController
     helmet = ItemCategory.find_by_name("Helmet")
     @item = Item.new(:item_category_id => helmet.id)
 
-    # @item.item_category.item_fields.each do |item_field|
-    #   item_field.item_field_values.build(:item => @item)
-    # end
-
-
     @item.item_category.item_fields.each do |item_field|
       @item.item_field_values.build(:item_field_id => item_field.id)
     end
@@ -36,11 +31,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    #todo
   end
 
   def update
+    #todo
   end
 
   def destroy
+    #todo
   end
 end

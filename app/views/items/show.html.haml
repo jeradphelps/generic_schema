@@ -10,5 +10,5 @@
 - @item.item_category.item_fields.each do |item_field|
   = item_field.label
   = "/"
-  = item_field.item_field_values.find_by_item_id(@item.id).ifv_string
+  = item_field.item_field_values.find_by_item_id(@item.id).value
   %br

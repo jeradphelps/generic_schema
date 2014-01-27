@@ -5,6 +5,16 @@ class ItemFieldValue < ActiveRecord::Base
   belongs_to :item
 
   def value
-    "todo complete me.  I am a wrapper for pulling the one value that is set based on my item_field.type"
+    if self.item_field.data_type == "True/False"
+      return self.ifv_boolean
+    elsif self.item_field.data_type == "Number"
+      return self.ifv_float
+    elsif self.item_field.data_type == "Integer"
+      return self.ifv_integer
+    elsif self.item_field.data_type == "String"
+      return self.ifv_string
+    elsif self.item_field.data_type == "Long Text"
+      return self.ifv_text
+    end
   end
 end

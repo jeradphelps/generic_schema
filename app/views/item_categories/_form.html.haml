@@ -4,7 +4,7 @@
   %br
   = f.simple_fields_for :item_fields do |item_fields_f|
     = item_fields_f.input :label
-    = item_fields_f.input :data_type
+    = item_fields_f.input :data_type, :collection => ItemFieldDataType.all
     %br  
 
   = f.submit "Submit"
