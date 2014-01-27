@@ -1,0 +1,10 @@
+= simple_form_for @item do |f|
+  = f.input :item_category_id, :as => :hidden, :value => @item.item_category.id
+
+  = f.simple_fields_for :item_field_values do |item_field_values_fields_f|
+    = item_field_values_fields_f.input :item_field_id, :as => :hidden
+    - label = item_field_values_fields_f.object.item_field.label
+    = item_field_values_fields_f.input :ifv_string, :label => label
+  %br
+
+  = f.submit "Submit"

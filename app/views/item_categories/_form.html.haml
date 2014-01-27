@@ -1,0 +1,10 @@
+= simple_form_for @item_category do |f|
+  = f.input :name
+  %br
+  %br
+  = f.simple_fields_for :item_fields do |item_fields_f|
+    = item_fields_f.input :label
+    = item_fields_f.input :data_type
+    %br  
+
+  = f.submit "Submit"

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item_field_id: 1
+  item_id: 1
+  ifv_boolean: false
+  ifv_float: 1.5
+  ifv_integer: 1
+  ifv_string: MyString
+  ifv_text: MyText
+
+two:
+  item_field_id: 1
+  item_id: 1
+  ifv_boolean: false
+  ifv_float: 1.5
+  ifv_integer: 1
+  ifv_string: MyString
+  ifv_text: MyText

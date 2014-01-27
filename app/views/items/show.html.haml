@@ -1,0 +1,14 @@
+%h1 Item
+
+%hr 
+= @item.id
+%br
+= @item.item_category.name
+%br
+
+- # n+1 here...eager load this thing
+- @item.item_category.item_fields.each do |item_field|
+  = item_field.label
+  = "/"
+  = item_field.item_field_values.find_by_item_id(@item.id).ifv_string
+  %br
