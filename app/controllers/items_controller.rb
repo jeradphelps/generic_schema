@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(params[:item])
 
     respond_to do |format|

@@ -11,12 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140127173321) do
+ActiveRecord::Schema.define(:version => 20140128011549) do
 
   create_table "item_categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "item_field_data_types", :force => true do |t|
+    t.string   "label"
+    t.string   "rails_data_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "item_field_values", :force => true do |t|
@@ -34,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20140127173321) do
   create_table "item_fields", :force => true do |t|
     t.integer  "item_category_id"
     t.string   "label"
-    t.string   "data_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "item_field_data_type_id"
   end
 
   create_table "items", :force => true do |t|

@@ -4,7 +4,21 @@
   = f.simple_fields_for :item_field_values do |item_field_values_fields_f|
     = item_field_values_fields_f.input :item_field_id, :as => :hidden
     - label = item_field_values_fields_f.object.item_field.label
-    = item_field_values_fields_f.input :ifv_string, :label => label
+    - # todo make a setter for this if possible???
+    - # or a shortcut that returns a symbol based on datatype or soemthing
+    - if item_field_values_fields_f.object.item_field.item_field_data_type.rails_data_type == "boolean"
+      = item_field_values_fields_f.input :ifv_boolean, :label => label
+    - elsif item_field_values_fields_f.object.item_field.item_field_data_type.rails_data_type == "float"
+      = item_field_values_fields_f.input :ifv_float, :label => label
+    - elsif item_field_values_fields_f.object.item_field.item_field_data_type.rails_data_type == "integer"
+      = item_field_values_fields_f.input :ifv_integer, :label => label
+    - elsif item_field_values_fields_f.object.item_field.item_field_data_type.rails_data_type == "string"
+      = item_field_values_fields_f.input :ifv_string, :label => label
+    - elsif item_field_values_fields_f.object.item_field.item_field_data_type.rails_data_type == "text"
+      = item_field_values_fields_f.input :ifv_text, :label => label
   %br
 
   = f.submit "Submit"
+
+
+

@@ -1,12 +1,5 @@
-class ItemFieldDataType
+class ItemFieldDataType < ActiveRecord::Base
+  attr_accessible :label, :rails_data_type
 
-  def self.all
-    [
-      "True/False",
-      "Number",
-      "Integer",
-      "Short Text",
-      "Long Text"
-    ]
-  end
+  has_many :item_fields
 end

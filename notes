@@ -1,0 +1,23 @@
+rails g model ItemCategory name:string
+
+rails g model Item item_category_id:integer
+
+rails g model ItemField item_category_id:integer label:string data_type:string
+
+rails g model ItemFieldValue item_field_id:integer item_id:integer ifv_boolean:boolean ifv_float:float ifv_integer:integer ifv_string:string ifv_text:text
+
+rails g model ItemFieldDataType label:string rails_data_type:string
+
+rails d model ItemCategory
+rails d model Item
+rails d model ItemField
+rails d model ItemFieldValue
+
+
+
+
+
+
+rails g controller ItemCategories index show new create edit update destroy
+rails g controller Items index show new create edit update destroy
+

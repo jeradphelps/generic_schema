@@ -5,16 +5,17 @@ class ItemFieldValue < ActiveRecord::Base
   belongs_to :item
 
   def value
-    if self.item_field.data_type == "True/False"
+    if self.item_field.item_field_data_type.rails_data_type == "boolean"
       return self.ifv_boolean
-    elsif self.item_field.data_type == "Number"
+    elsif self.item_field.item_field_data_type.rails_data_type == "float"
       return self.ifv_float
-    elsif self.item_field.data_type == "Integer"
+    elsif self.item_field.item_field_data_type.rails_data_type == "integer"
       return self.ifv_integer
-    elsif self.item_field.data_type == "String"
+    elsif self.item_field.item_field_data_type.rails_data_type == "string"
       return self.ifv_string
-    elsif self.item_field.data_type == "Long Text"
+    elsif self.item_field.item_field_data_type.rails_data_type == "text"
       return self.ifv_text
     end
   end
 end
+
