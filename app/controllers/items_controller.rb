@@ -9,8 +9,8 @@ class ItemsController < ApplicationController
 
   def new
     # todo "helmet" should be dynamic obviously
-    helmet = ItemCategory.find_by_name("Helmet")
-    @item = Item.new(:item_category_id => helmet.id)
+    last_item_cat = ItemCategory.last
+    @item = Item.new(:item_category_id => last_item_cat.id)
 
     @item.item_category.item_fields.each do |item_field|
       @item.item_field_values.build(:item_field_id => item_field.id)
