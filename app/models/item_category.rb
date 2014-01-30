@@ -5,4 +5,6 @@ class ItemCategory < ActiveRecord::Base
   has_many :items
   
   accepts_nested_attributes_for :item_fields
+
+  validates_presence_of :name
 end

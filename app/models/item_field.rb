@@ -7,5 +7,7 @@ class ItemField < ActiveRecord::Base
   has_many :items, :through => :item_field_values
   
   accepts_nested_attributes_for :item_field_values
+
+  validates_presence_of :label, :item_field_data_type
 end
 
