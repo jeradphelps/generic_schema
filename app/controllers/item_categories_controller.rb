@@ -10,7 +10,7 @@ class ItemCategoriesController < ApplicationController
   def new
     # todo This should be dynamic obviously
     @item_category = ItemCategory.new
-    3.times { @item_category.item_fields.build }
+    2.times { @item_category.item_fields.build }
   end
 
   def create

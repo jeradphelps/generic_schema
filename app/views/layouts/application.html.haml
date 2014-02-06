@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title Aem
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    = link_to "Home", root_path
+    %hr
+    = yield

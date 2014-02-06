@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @item_category = ItemCategory.find(params[:item_category_id])
+    @items = Item.where(:item_category_id => params[:item_category_id])
   end
 
   def show
@@ -8,7 +9,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-    # todo "helmet" should be dynamic obviously
     last_item_cat = ItemCategory.last
     @item = Item.new(:item_category_id => last_item_cat.id)
 
