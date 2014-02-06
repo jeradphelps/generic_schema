@@ -1,0 +1,2 @@
+# Rails Generic Database Schema
+
