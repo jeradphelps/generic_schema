@@ -12,8 +12,8 @@ class ItemsController < ApplicationController
     last_item_cat = ItemCategory.last
     @item = Item.new(:item_category_id => last_item_cat.id)
 
-    @item.item_category.item_fields.each do |item_field|
-      @item.item_field_values.build(:item_field_id => item_field.id)
+    @item.item_category.item_category_attributes.each do |item_category_attribute|
+      @item.item_attribute_values.build(:item_category_attribute_id => item_category_attribute.id)
     end
   end
 

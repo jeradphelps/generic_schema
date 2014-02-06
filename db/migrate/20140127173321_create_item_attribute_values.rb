@@ -1,7 +1,7 @@
-class CreateItemFieldValues < ActiveRecord::Migration
+class CreateItemAttributeValues < ActiveRecord::Migration
   def change
-    create_table :item_field_values do |t|
-      t.integer :item_field_id
+    create_table :item_attribute_values do |t|
+      t.integer :item_category_attribute_id
       t.integer :item_id
       t.boolean :ifv_boolean
       t.float :ifv_float

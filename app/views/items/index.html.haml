@@ -4,15 +4,14 @@
   %thead
     %tr
       %th ID
-      - @item_category.item_fields.each do |item_field|
-        %th= item_field.label
+      - @item_category.item_category_attributes.each do |item_category_attribute|
+        %th= item_category_attribute.label
   %tbody
     - @items.each do |item|
       %tr
         %td= item.id
-        - # item.item_field_values.first.item_field.label
-        - item.item_field_values.each do |item_field_value|
-          %td= item_field_value.value
+        - item.item_attribute_values.each do |item_attribute_value|
+          %td= item_attribute_value.value
         %td= link_to "View", item
         %td= link_to "Edit", edit_item_path(item)
         %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }

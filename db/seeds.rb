@@ -5,5 +5,5 @@
   { :label => "Short Text", :rails_data_type => "string"  },
   { :label => "Long Text", :rails_data_type => "text" }
 ].each do |data_type_hash|
-  ItemFieldDataType.find_or_create_by_label(data_type_hash)
+  ItemCategoryAttributeDataType.find_or_create_by_label(data_type_hash)
 end
