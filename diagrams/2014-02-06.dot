@@ -1,0 +1,25 @@
+digraph Aem {
+rankdir = "LR";
+ranksep = "0.5";
+nodesep = "0.4";
+pad = "0.4,0.4";
+margin = "0,0";
+concentrate = "true";
+labelloc = "t";
+fontsize = "13";
+fontname = "Arial Bold";
+node[ shape  =  "Mrecord" , fontsize  =  "10" , fontname  =  "Arial" , margin  =  "0.07,0.05" , penwidth  =  "1.0"];
+edge[ fontname  =  "Arial" , fontsize  =  "7" , dir  =  "both" , arrowsize  =  "0.9" , penwidth  =  "1.0" , labelangle  =  "32" , labeldistance  =  "1.8"];
+label = "Aem domain model\n\n";
+m_Item [label = "Item|"];
+m_ItemAttributeValue [label = "ItemAttributeValue|| {  ifv_boolean (boolean) \n  ifv_float (float) \n  ifv_integer (integer) \n  ifv_string (string) \n  ifv_text (text) \n  } "];
+m_ItemCategory [label = "ItemCategory|| {  name (string) \n  } "];
+m_ItemCategoryAttribute [label = "ItemCategoryAttribute|| {  label (string) \n  } "];
+m_ItemCategoryAttributeDataType [label = "ItemCategoryAttributeDataType|| {  label (string) \n  rails_data_type (string) \n  } "];
+  m_ItemCategory -> m_ItemCategoryAttribute [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ItemCategory -> m_Item [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Item -> m_ItemAttributeValue [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Item -> m_ItemCategoryAttribute [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_ItemCategoryAttribute -> m_ItemAttributeValue [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ItemCategoryAttributeDataType -> m_ItemCategoryAttribute [arrowhead = "normal", arrowtail = "none", weight = "2"];
+}
