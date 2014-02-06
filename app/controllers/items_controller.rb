@@ -9,8 +9,8 @@ class ItemsController < ApplicationController
   end
 
   def new
-    last_item_cat = ItemCategory.last
-    @item = Item.new(:item_category_id => last_item_cat.id)
+    @item_category = ItemCategory.find(params[:item_category_id])
+    @item = Item.new(:item_category_id => @item_category.id)
 
     @item.item_category.item_category_attributes.each do |item_category_attribute|
       @item.item_attribute_values.build(:item_category_attribute_id => item_category_attribute.id)
@@ -30,11 +30,20 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    #todo
+    @item = Item.find(params[:id])
+    @item_category = @item.item_category
   end
 
   def update
-    #todo
+    @item = Item.find(params[:id])
+
+    respond_to do |format|
+      if @item.update_attributes(params[:item])
+        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+      else
+        format.html { render action: "edit" }
+      end
+    end
   end
 
   def destroy
