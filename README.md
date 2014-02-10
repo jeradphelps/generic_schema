@@ -1,6 +1,6 @@
 # Rails Generic Database Schema
 
-A POC app that allows users to define what objects exist in their system and the attributes/datatypes those objects have.
+A POC app that allows users to define the objects that exist in their system and the attributes/datatypes those objects have.
 
 ## To Run
 
